@@ -25,8 +25,11 @@ const compareGuesses = (userGuess,computerGuess,secretTarget) =>{
     let computerClose = Math.abs(secretTarget - computerGuess);
   
     // if user closest then return true otherwise false
-    (userClose > computerClose)? true : false;
+    let result =  (userClose <= computerClose)?  true : false;
+    return result;
 }
 
 // increase the winner’s score after each round, depending on winner if its human or computer
 const updateScore = winner => (winner === 'human')?humanScore++ : computerScore++;
+
+const advanceRound = () => currentRoundNumber++;
